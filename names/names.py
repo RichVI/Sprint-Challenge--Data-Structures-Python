@@ -22,23 +22,34 @@ duplicates = []  # Return the list of duplicates in this data structure
 #             duplicates.append(name_1)
 
 
-# Time complexity O(log n)
-# Use BST
-# runtime: 0.06597399711608887 seconds
-binary_tree = BSTNode("")
+# # Time complexity O(log n)
+# # Use BST
+# # runtime: 0.06597399711608887 seconds
+# binary_tree = BSTNode("")
 
-for name_1 in names_1:
-    binary_tree.insert(name_1)        
+# for name_1 in names_1:
+#     binary_tree.insert(name_1)        
 
-for name_2 in names_2:
-    if binary_tree.contains(name_2):
-        duplicates.append(name_2)
+# for name_2 in names_2:
+#     if binary_tree.contains(name_2):
+#         duplicates.append(name_2)
 
-end_time = time.time()
-print (f"{len(duplicates)} duplicates:\n\n{', '.join(duplicates)}\n\n")
-print (f"runtime: {end_time - start_time} seconds")
+# end_time = time.time()
+# print (f"{len(duplicates)} duplicates:\n\n{', '.join(duplicates)}\n\n")
+# print (f"runtime: {end_time - start_time} seconds")
 
 # ---------- Stretch Goal -----------
 # Python has built-in tools that allow for a very efficient approach to this problem
 # What's the best time you can accomplish?  Thare are no restrictions on techniques or data
 # structures, but you may not import any additional libraries that you did not write yourself.
+
+# Time complexity O(1)
+# Use Set_intersection
+# runtime: 0.01150369644165039 seconds
+set_1 = set(names_1) 
+set_2 = set(names_2)
+duplicates = set_1.intersection(set_2)
+
+end_time = time.time()
+print (f"{len(duplicates)} duplicates:\n\n{', '.join(duplicates)}\n\n")
+print (f"runtime: {end_time - start_time} seconds")
